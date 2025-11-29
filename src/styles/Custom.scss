@@ -1,0 +1,18 @@
+// Custom Overwrite
+$primary: #492356;
+$secondary: #4a494d;
+$white: #f9f9f9;
+$danger: rgb(151, 27, 27);
+$font-family: "Roboto", sans-serif;
+$body-font: "Arvo", serif;
+
+// Import Styles
+@import "Header";
+@import "Footer";
+@import "Hero";
+@import "Contact-Help";
+@import "Login";
+@import "Dash-Header";
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap.scss";

@@ -1,0 +1,124 @@
+.faq-section {
+  padding: 2rem 0;
+
+  .accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: lighten($secondary, 8%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(124, 57, 147, 0.4);
+    }
+  }
+
+  .accordion-button {
+    background-color: lighten($primary, 10%);
+    color: $white;
+    font-weight: 600;
+    padding: 1.2rem;
+    border: none;
+
+    &:not(.collapsed) {
+      background-color: $primary;
+      color: $white;
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  .accordion-button::after {
+    filter: invert(1);
+  }
+
+  .accordion-body {
+    background-color: lighten($white, 15%);
+    padding: 1.25rem 1.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 767px) {
+    .accordion-button {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+
+    .accordion-body {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.contact-card {
+  border-radius: 1rem;
+  background: linear-gradient(120deg, lighten($primary, 40%) 50%, #ffffff);
+  padding: 1.5rem 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: visible;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(124, 57, 147, 0.4);
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h5,
+  p,
+  li {
+    color: $white;
+  }
+
+  .bi {
+    color: $primary;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+      color: lighten($primary, 15%);
+    }
+  }
+
+  a[href^="mailto:"] {
+    font-weight: 500;
+    position: relative;
+
+    &:hover {
+      color: lighten($primary, 25%);
+      text-decoration: underline;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 100%;
+        background-color: lighten($primary, 25%);
+        transition: width 0.3s ease;
+      }
+    }
+  }
+}

@@ -1,16 +1,16 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"
 
 function DashHeader() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleLogout = () => {
-    navigate("/login");
-  };
+    navigate("/login")
+  }
 
   return (
     <aside className="dash-header">
       <div className="dash-logo">
-        <img src="./src/assets/ticket-white.svg" alt="WSU Logo" />
+        <img src="./ticket-white.svg" alt="WSU Logo" />
         <h2>STA System</h2>
       </div>
 
@@ -30,7 +30,7 @@ function DashHeader() {
         Logout
       </button>
     </aside>
-  );
+  )
 }
 
-export default DashHeader;
+export default DashHeader

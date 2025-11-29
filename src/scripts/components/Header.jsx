@@ -1,30 +1,25 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom"
 
 function Header() {
-  const location = useLocation();
-  const path = location.pathname;
+  const location = useLocation()
+  const path = location.pathname
 
-  let firstButtonText = "Contact / Help";
-  let firstButtonHref = "/contact-help";
+  let firstButtonText = "Contact / Help"
+  let firstButtonHref = "/contact-help"
 
   if (path === "/contact-help") {
-    firstButtonText = "Home";
-    firstButtonHref = "/";
+    firstButtonText = "Home"
+    firstButtonHref = "/"
   } else if (path === "/login") {
-    firstButtonText = "Home";
-    firstButtonHref = "/";
+    firstButtonText = "Home"
+    firstButtonHref = "/"
   }
 
   return (
     <header className="bg-primary text-white">
       <nav className="container-fluid px-3 px-md-5 navbar navbar-expand-md navbar-dark">
         <a className="navbar-brand d-flex align-items-center" href="/">
-          <img
-            className="me-3"
-            src="./src/assets/ticket-white.svg"
-            height="35"
-            alt="STA Ticket Logo"
-          />
+          <img className="me-3" src="/logo.png" height="35" alt="STA Ticket Logo" />
           <h1 className="fs-3 m-0">STA Ticket System</h1>
         </a>
 
@@ -43,10 +38,7 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mt-3 mt-md-0 d-flex flex-column flex-md-row justify-content-center justify-content-md-end align-items-center w-100">
             <li className="nav-item mb-2 mb-md-0 me-md-3">
-              <a
-                className="btn btn-primary text-white w-100 w-md-auto"
-                href={firstButtonHref}
-              >
+              <a className="btn btn-primary text-white w-100 w-md-auto" href={firstButtonHref}>
                 {firstButtonText}
               </a>
             </li>
@@ -63,7 +55,7 @@ function Header() {
         </div>
       </nav>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

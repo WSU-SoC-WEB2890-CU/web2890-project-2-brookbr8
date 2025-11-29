@@ -19,7 +19,7 @@ function Header() {
     <header className="bg-primary text-white">
       <nav className="container-fluid px-3 px-md-5 navbar navbar-expand-md navbar-dark">
         <a className="navbar-brand d-flex align-items-center" href="/">
-          <img className="me-3" src="/logo.png" height="35" alt="STA Ticket Logo" />
+          <img className="me-3" src="/ticket-white.svg" height="35" alt="STA Ticket Logo" />
           <h1 className="fs-3 m-0">STA Ticket System</h1>
         </a>
 

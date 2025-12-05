@@ -41,27 +41,28 @@
         }
       }
 
-      .form-check {
-        margin-bottom: 0.75rem;
-      }
+.form-check-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 
-      .form-check-label {
-        color: $secondary;
-      }
+  .form-check {
+    margin-bottom: 0;
+  }
 
-      .forgot-password {
-        display: block;
-        margin-top: 0.25rem;
-        text-decoration: none;
-        color: $primary;
-        font-size: 0.9rem;
-        transition: color 0.3s ease, text-decoration 0.3s ease;
+  .forgot-password {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: $primary;
 
-        &:hover {
-          color: darken($primary, 5%);
-          text-decoration: underline;
-        }
-      }
+    &:hover {
+      color: darken($primary, 5%);
+      text-decoration: underline;
+    }
+  }
+}
+
 
       button.btn-primary {
         background-color: $primary;

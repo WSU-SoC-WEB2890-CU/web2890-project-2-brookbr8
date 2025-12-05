@@ -19,10 +19,10 @@ function DashHeader() {
           Dashboard
         </Link>
         <Link className="nav-button" to="/tickets">
-          My Tickets
+          Tickets
         </Link>
         <Link className="nav-button" to="/profile">
-          Profile
+          Messages
         </Link>
       </nav>
 

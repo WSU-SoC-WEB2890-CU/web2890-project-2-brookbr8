@@ -1,63 +1,69 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Header from "../scripts/components/Header";
-import Footer from "../scripts/components/Footer";
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import Header from "../scripts/components/Header"
+import Footer from "../scripts/components/Footer"
 
 function Login() {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const [rememberMe, setRememberMe] = useState(false)
 
-  const adminEmails = ["timchapman@weber.edu", "brookbrown@weber.edu"];
+  const adminEmails = ["timchapman@weber.edu", "brookbrown@weber.edu"]
+
+  useEffect(() => {
+    const rememberedEmail = localStorage.getItem("rememberedEmail")
+    if (rememberedEmail) {
+      setEmail(rememberedEmail)
+      setRememberMe(true)
+    }
+  }, [])
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setError("");
+    e.preventDefault()
+    setError("")
 
     if (!email || !password) {
-      setError("Please fill in all fields.");
-      return;
+      setError("Please fill in all fields.")
+      return
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
-      setError(
-        "Please enter a valid email address. Only a Weber State email will work."
-      );
-      return;
+      setError("Please enter a valid email address. Only a Weber State email will work.")
+      return
     }
 
     if (password.length < 6) {
-      setError("Password must be at least 6 characters long.");
-      return;
+      setError("Password must be at least 6 characters long.")
+      return
+    }
+
+    if (rememberMe) {
+      localStorage.setItem("rememberedEmail", email)
+    } else {
+      localStorage.removeItem("rememberedEmail")
     }
 
     if (adminEmails.includes(email.toLowerCase())) {
-      navigate("/admin-dash");
+      navigate("/admin-dash")
     } else if (email.toLowerCase().endsWith("@weber.edu")) {
-      navigate("/user-dash");
+      navigate("/user-dash")
     } else {
-      setError("Unauthorized email address @weber.edu only.");
+      setError("Unauthorized email address @weber.edu only.")
     }
-  };
+  }
 
   return (
     <div className="login">
       <Header />
       <main className="d-flex justify-content-center align-items-center vh-100 bg-light dash">
-        <div
-          className="card shadow-lg p-5 rounded-4"
-          style={{ maxWidth: "500px", width: "90%" }}
-        >
+        <div className="card shadow-lg p-5 rounded-4" style={{ maxWidth: "500px", width: "90%" }}>
           <h2 className="text-center mb-4 fw-bold">Welcome Back!</h2>
-          <p className="text-center text-muted mb-4">
-            Sign in to your Weber account
-          </p>
+          <p className="text-center text-muted mb-4">Sign in to your Weber account</p>
 
-          {error && (
-            <div className="alert alert-danger text-center">{error}</div>
-          )}
+          {error && <div className="alert alert-danger text-center">{error}</div>}
 
           <form id="login-form" onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -89,30 +95,25 @@ function Login() {
               />
             </div>
 
-            <div className="mb-3">
-              <div className="form-check mb-2">
+            <div className="form-check-row">
+              <div className="form-check">
                 <input
                   className="form-check-input"
                   type="checkbox"
                   id="rememberMe"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
                 />
                 <label className="form-check-label" htmlFor="rememberMe">
                   Remember me
                 </label>
               </div>
-              <a
-                href="https://www.weber.edu/help/"
-                className="forgot-password"
-                target="_blank"
-              >
+              <a href="https://www.weber.edu/help/" className="forgot-password" target="_blank">
                 Forgot password?
               </a>
             </div>
 
-            <button
-              type="submit"
-              className="btn btn-primary btn-lg w-100 mb-3 shadow-sm"
-            >
+            <button type="submit" className="btn btn-primary btn-lg w-100 mb-3 shadow-sm">
               Login
             </button>
           </form>
@@ -120,7 +121,7 @@ function Login() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

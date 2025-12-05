@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import ContactHelp from "../pages/Contact-Help";
 import Login from "../pages/Login";
 import UserDash from "../pages/User-Dash";
-import AdminDash from "../pages/User-Dash";
+import AdminDash from "../pages/Admin-Dash";
 import ScrollToTop from "./components/ScrollToTop";
 import "../styles/Main.css";
 

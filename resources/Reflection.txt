@@ -1,0 +1,3 @@
+Honestly, the hardest part of this project for me was getting Firebase to cooperate. I kept running into issues where things wouldn't save or load the way I expected, it took a lot of trial and error to figure out what was actually going on with it. Even though it was frustrating at times, I definitely learned more about how Firebase handles data.
+
+In the future I would improve the whole user VS. admin system so users can only see their own tickets and admins can have more control and manage every ticket. I would also like to add more of Firebase's responsive real-time database throughout the dashboard to make it feel cleaner, more connected, and efficient.

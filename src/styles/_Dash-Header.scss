@@ -1,0 +1,109 @@
+.dash-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100vh;
+  background: linear-gradient(120deg, $primary 50%, #f9f9f9);
+  padding: 2rem 1rem;
+  border-right: 2px solid darken($primary, 10%) !important;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .dash-logo {
+    text-align: center;
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $white;
+    }
+  }
+
+  .dash-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .nav-button {
+      display: block;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(135deg, lighten($primary, 10%), lighten($primary, 20%));
+      border-radius: 0.85rem;
+      font-weight: 600;
+      color: $white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(124, 57, 147, 0.25);
+
+      &:hover {
+        background: linear-gradient(135deg, lighten($primary, 20%), lighten($primary, 30%));
+        transform: translateY(-3px);
+        box-shadow: 0 8px 18px rgba(124, 57, 147, 0.35);
+      }
+    }
+  }
+
+  .logout-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: lighten($primary, 15%);
+    color: $white;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+
+    &:hover {
+      background-color: lighten($primary, 25%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(124, 57, 147, 0.35);
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 120px;
+    padding: 1rem 0.5rem;
+
+    .dash-logo img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .dash-logo h2 {
+      font-size: 1rem;
+    }
+
+    .dash-nav .nav-button {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.dashboard {
+  display: flex;
+
+  .dashboard-content {
+    flex: 1;
+    padding: 2rem;
+    min-height: 100vh;
+    margin-left: 180px;
+
+    @media (max-width: 600px) {
+      margin-left: 120px;
+      padding: 1rem;
+    }
+  }
+}

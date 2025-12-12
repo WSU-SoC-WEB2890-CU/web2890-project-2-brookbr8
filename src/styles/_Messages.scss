@@ -1,0 +1,116 @@
+.messages-content {
+  flex: 1;
+  padding: 2rem;
+  min-height: 100vh;
+  background: #f9f9f9;
+  margin-left: 180px;
+
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: $primary;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 2rem;
+  }
+
+  .message-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #cfcfcf;
+      font-size: 1rem;
+      background: #fafafa;
+      margin-top: 5px;
+
+      &:focus {
+        outline: none;
+        border-color: $primary;
+        background: #fff;
+      }
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .status-message {
+      color: $primary;
+      font-weight: 500;
+    }
+
+    .submit-btn {
+      padding: 12px;
+      background: $primary;
+      color: white;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+
+      &:hover {
+        background: darken($primary, 10%);
+      }
+    }
+  }
+
+  .messages-list {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .message-item {
+        border-bottom: 1px solid #eaeaea;
+        padding: 12px 0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .message-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          strong {
+            font-weight: 600;
+          }
+
+          .message-from {
+            font-size: 0.85rem;
+            color: #555;
+          }
+        }
+
+        .message-body {
+          margin-top: 4px;
+          font-size: 0.95rem;
+          color: #333;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.footer {
+  background-color: $secondary;
+  color: $white;
+  padding: 3rem 0;
+  border-top: 2px solid darken($primary, 10%) !important;
+
+  h5 {
+    color: $white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    color: lighten($white, 10%);
+  }
+
+  .footer-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: $white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgb(124, 57, 147);
+      background-color: lighten($primary, 10%);
+      color: $white;
+    }
+  }
+
+  .bi {
+    font-size: 1.5rem;
+    color: $white;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 4px 8px rgb(124, 57, 147);
+      color: lighten($primary, 30%);
+    }
+  }
+
+  hr {
+    border-color: lighten($primary, 50%);
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 767.98px) {
+    text-align: center;
+
+    .col-md-4 {
+      align-items: center !important;
+      margin-bottom: 2rem;
+    }
+
+    .d-flex.gap-3 {
+      justify-content: center !important;
+    }
+  }
+}

@@ -1,0 +1,172 @@
+.dashboard-layout {
+  display: flex;
+  flex-direction: row;
+
+  .tickets-content {
+    flex: 1;
+    padding: 2rem;
+    min-height: 100vh;
+    background: #f9f9f9;
+    margin-left: 180px;
+
+    h1.tickets-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: $primary;
+    }
+
+    .ticket-list {
+      margin-bottom: 2rem;
+
+      h2 {
+        margin-bottom: 1rem;
+        color: $primary;
+        font-size: 1.8rem;
+      }
+
+      .ticket-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .ticket-card {
+        flex: 0 0 300px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .ticket-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .ticket-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+          }
+
+          .urgent-badge {
+            background: #d9534f;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+          }
+        }
+
+        .ticket-desc {
+          font-size: 0.95rem;
+          color: #555;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: #666;
+          margin: 4px 0;
+
+          &.ticket-date {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 6px;
+          }
+        }
+      }
+    }
+
+    .new-ticket-form {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      .ticket-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        input,
+        textarea,
+        select {
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid #cfcfcf;
+          font-size: 1rem;
+          background: #fafafa;
+          transition: border 0.2s;
+
+          &:focus {
+            border-color: $primary;
+            outline: none;
+            background: #fff;
+          }
+        }
+
+        .contact-section {
+          background: #f7f3ff;
+          padding: 15px 20px;
+          border-radius: 10px;
+          border-left: 4px solid $primary;
+
+          h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: $primary;
+          }
+
+          input {
+            margin-bottom: 10px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .checkbox-row {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 0.95rem;
+
+          input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: $primary;
+          }
+        }
+
+        .submit-btn {
+          padding: 12px;
+          background: $primary;
+          color: white;
+          border-radius: 8px;
+          border: none;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 1rem;
+          transition: background 0.2s;
+
+          &:hover {
+            background: darken($primary, 10%);
+          }
+        }
+      }
+    }
+  }
+
+    @media (max-width: 600px) {
+    margin-left: -60px;
+  }
+}

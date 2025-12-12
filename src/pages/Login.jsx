@@ -1,16 +1,18 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import Header from "../scripts/components/Header"
 import Footer from "../scripts/components/Footer"
+import { UserContext } from "../scripts/components/User-Context"
+
+export const adminEmails = ["timchapman@weber.edu", "brookbrown@weber.edu"]
 
 function Login() {
   const navigate = useNavigate()
+  const { setUserRole } = useContext(UserContext)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
-
-  const adminEmails = ["timchapman@weber.edu", "brookbrown@weber.edu"]
 
   useEffect(() => {
     const rememberedEmail = localStorage.getItem("rememberedEmail")
@@ -47,11 +49,11 @@ function Login() {
     }
 
     if (adminEmails.includes(email.toLowerCase())) {
+      setUserRole(email)
       navigate("/admin-dash")
     } else if (email.toLowerCase().endsWith("@weber.edu")) {
+      setUserRole(email)
       navigate("/user-dash")
-    } else {
-      setError("Unauthorized email address @weber.edu only.")
     }
   }
 
@@ -108,7 +110,7 @@ function Login() {
                   Remember me
                 </label>
               </div>
-              <a href="https://www.weber.edu/help/" className="forgot-password" target="_blank">
+              <a href="https://www.weber.edu/help/" className="forgot-password" target="_blank" rel="noreferrer">
                 Forgot password?
               </a>
             </div>

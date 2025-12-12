@@ -15,7 +15,7 @@ function UserDash() {
 
   return (
     <div className="dashboard">
-      <DashHeader />
+      <DashHeader role="user" />
 
       <main className="dashboard-content">
         <h1>Welcome to your Dashboard!</h1>
@@ -59,4 +59,4 @@ function UserDash() {
   )
 }
 
-export default UserDash
+export default UserDash;

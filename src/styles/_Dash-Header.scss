@@ -1,8 +1,12 @@
 .dash-header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 180px;
-  background-color: $primary;
-  min-height: 100vh;
+  height: 100vh;
+  background: linear-gradient(120deg, $primary 50%, #f9f9f9);
   padding: 2rem 1rem;
+  border-right: 2px solid darken($primary, 10%) !important;
 
   display: flex;
   flex-direction: column;
@@ -33,11 +37,7 @@
       display: block;
       text-align: center;
       padding: 0.75rem 1rem;
-      background: linear-gradient(
-        135deg,
-        lighten($primary, 10%),
-        lighten($primary, 20%)
-      );
+      background: linear-gradient(135deg, lighten($primary, 10%), lighten($primary, 20%));
       border-radius: 0.85rem;
       font-weight: 600;
       color: $white;
@@ -46,11 +46,7 @@
       box-shadow: 0 3px 8px rgba(124, 57, 147, 0.25);
 
       &:hover {
-        background: linear-gradient(
-          135deg,
-          lighten($primary, 20%),
-          lighten($primary, 30%)
-        );
+        background: linear-gradient(135deg, lighten($primary, 20%), lighten($primary, 30%));
         transform: translateY(-3px);
         box-shadow: 0 8px 18px rgba(124, 57, 147, 0.35);
       }
@@ -75,6 +71,25 @@
       box-shadow: 0 8px 18px rgba(124, 57, 147, 0.35);
     }
   }
+
+  @media (max-width: 600px) {
+    width: 120px;
+    padding: 1rem 0.5rem;
+
+    .dash-logo img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .dash-logo h2 {
+      font-size: 1rem;
+    }
+
+    .dash-nav .nav-button {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
 }
 
 .dashboard {
@@ -84,5 +99,11 @@
     flex: 1;
     padding: 2rem;
     min-height: 100vh;
+    margin-left: 180px;
+
+    @media (max-width: 600px) {
+      margin-left: 120px;
+      padding: 1rem;
+    }
   }
 }

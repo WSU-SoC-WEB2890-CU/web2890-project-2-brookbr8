@@ -16,7 +16,7 @@ function AdminDash() {
 
   return (
     <div className="dashboard">
-      <DashHeader />
+      <DashHeader role="admin" />
 
       <main className="dashboard-content">
         <h1>Welcome to your Dashboard, STA!</h1>
@@ -45,7 +45,7 @@ function AdminDash() {
           </div>
 
           <section className="dashboard-section full-width">
-            <h2>Messages</h2>
+            <h2>New Messages</h2>
             <ul>
               {messages.map((msg) => (
                 <li key={msg.id}>
@@ -60,4 +60,4 @@ function AdminDash() {
   )
 }
 
-export default AdminDash
+export default AdminDash;
